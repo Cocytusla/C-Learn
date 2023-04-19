@@ -14,3 +14,49 @@
     自定义枚举项名字，//枚举中包裹的整形常量，第一个默认值是0，下面会一次累加
     自定义枚举项名字，
   }
+
+申明枚举位置：
+  1.namespace语句块中（常用）
+  2.class语句块中 struct语句块中
+  注意：枚举不能在函数语句块中申明
+
+枚举使用：
+//申明枚举变量
+//自定义枚举类型 变量名=默认值；（自定义枚举类型.枚举项）
+namespace Lesson_1枚举
+{
+
+    enum E_MonsterTpye
+    {
+        Norml,
+
+        Boss,
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+
+            E_MonsterTpye monsterTpye = E_MonsterTpye.Boss;
+            //if (monsterTpye==E_MonsterTpye.Boss)
+            //{
+            //    Console.WriteLine("Boss逻辑");
+            //}
+
+            switch (monsterTpye)
+            {
+                case E_MonsterTpye.Norml:
+                    //Console.WriteLine("普通怪");
+                    //break;
+                case E_MonsterTpye.Boss:
+                    Console.WriteLine("BOSS怪");
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+}
+
