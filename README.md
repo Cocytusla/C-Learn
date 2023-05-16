@@ -74,7 +74,46 @@ namespace Lesson_1枚举
 
 静态成员
 
+在C#中，静态类和静态构造函数是两个不同的概念。
 
+静态类（Static Class）：
+
+静态类是指只包含静态成员（静态字段、静态方法、静态属性）的类，不能被实例化。
+静态类的成员可以通过类名直接访问，无需创建对象实例。
+静态类常用于定义工具类、辅助类或者包含一些公用的静态方法和属性。
+静态构造函数（Static Constructor）：
+
+静态构造函数是一个特殊的构造函数，用于初始化静态成员。
+静态构造函数在类第一次被使用之前自动调用，且只会被调用一次。
+静态构造函数没有参数，没有访问修饰符，且无法被显式调用。
+静态构造函数可以用来执行一些初始化操作，例如加载配置、初始化静态数据等。
+以下是一个示例代码，演示了静态类和静态构造函数的使用：
+
+csharp
+Copy code
+public static class MyStaticClass
+{
+    public static int MyStaticProperty { get; set; }
+
+    public static void MyStaticMethod()
+    {
+        // 静态方法的实现
+    }
+}
+
+public class MyClass
+{
+    static MyClass()
+    {
+        // 静态构造函数的实现
+    }
+}
+
+// 使用静态类和静态构造函数
+MyStaticClass.MyStaticProperty = 10;
+MyStaticClass.MyStaticMethod();
+
+MyClass myObj = new MyClass(); // 实例化 MyClass 类时，静态构造函数会被自动调用
 
 
 
